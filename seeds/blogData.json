@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Star Wars",
+    "text": "A long time ago in a galaxy far far away",
+    "date_created": "11/2/21"
+  },
+  {
+    "id": "2",
+    "title": "Fairy Tale",
+    "text": "Once upn a time something happened.",
+    "date_created": "11/1/21"
+  },
+  {
+    "id": "3",
+    "title": "Lorem Ipsum",
+    "text": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...",
+    "date_created": "10/31/21"
+  }
+]

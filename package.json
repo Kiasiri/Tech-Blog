@@ -20,5 +20,14 @@
     "express-session": "^1.17.2",
     "mysql2": "^2.3.2",
     "sequelize": "^6.9.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kiasiri/Tech-Blog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kiasiri/Tech-Blog/issues"
+  },
+  "homepage": "https://github.com/Kiasiri/Tech-Blog#readme"
 }
