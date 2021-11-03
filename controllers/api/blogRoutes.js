@@ -1,9 +1,7 @@
 const router = require("express").Router();
 const { User, Blog } = require("../../models");
 const withAuth = require("../../utils/auth");
-//TODO: make a get all and get by id for comments and blogs
-//TODO: make an add blog and and add comment route
-//TODO: make an update and delete route for blogs and comments by id?
+
 router.post("/", withAuth, async (req, res) => {
   try {
     const newBlogData = await Blog.create({
@@ -25,7 +23,7 @@ router.put("/:id", async (req, res) => {
     });
 
     if (!editBlog) {
-      res.status(404).json("No blog found");
+      res.status(404).json("No blog found to edit");
     }
 
     res.status(200).json(editBlog);
@@ -42,7 +40,7 @@ router.delete("/:id", withAuth, async (req, res) => {
       },
     });
     if (!delBlog) {
-      res.status(404).json("no blog found");
+      res.status(404).json("no blog found to delete");
       return;
     }
     res.status(200).json(delBlog);
