@@ -22,10 +22,15 @@ router.get("/", withAuth, async (req, res) => {
   }
 });
 
+//TODO: make dashboard and home page routes
+//TODO: make an add blog and and add comment route
+//TODO: make an update and delete route for blogs and comments by id?
+
+//keep this one
 router.get("/login", (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect("/");
+    res.redirect("/dashboard");
     return;
   }
 
