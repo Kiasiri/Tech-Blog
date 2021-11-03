@@ -62,9 +62,6 @@ router.get("/homepage", async (req, res) => {
 });
 
 //TODO: make dashboard and home page routes
-//TODO: make a get all and get by id for comments and blogs
-//TODO: make an add blog and and add comment route
-//TODO: make an update and delete route for blogs and comments by id?
 
 //keep this one
 router.get("/login", (req, res) => {
