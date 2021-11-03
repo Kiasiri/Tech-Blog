@@ -21,8 +21,48 @@ router.get("/", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+router.get("dashboard", withAuth, async (req, res) => {
+  try {
+    const userData = await User.findByPk(req.session.user_id, {
+      attributes: { exclude: ["password"] },
+      include: [{ model: Blog }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    res.render("dashboard", {
+      ...user,
+      loggedIn: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get("/homepage", async (req, res) => {
+  try {
+    const blogData = await Blog.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+
+    res.render("homepage", {
+      blogs,
+      loggedIn: req.session.loggedIn,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 //TODO: make dashboard and home page routes
+//TODO: make a get all and get by id for comments and blogs
 //TODO: make an add blog and and add comment route
 //TODO: make an update and delete route for blogs and comments by id?
 
