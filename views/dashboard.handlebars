@@ -8,7 +8,7 @@
   <div class="">
     <h3>Create a New Blog Post:</h3>
 
-    <form class="form new-blog-form">
+    <form class="form new-blog-form" id="blog-form">
       <div class="form-group">
         <label for="blog-name">blog name:</label>
         <input class="form-input" type="text" id="blog-name" name="blog-name" />
@@ -23,25 +23,24 @@
     </form>
   </div>
 
-  {{#if blogs.length}}
-    <div class="">
-      <h3>ALL BLOGS:</h3>
+  <div class="">
+    <h3>ALL BLOGS:</h3>
 
-      {{#each blogs as |blog|}}
+    {{#each blogs as |blog|}}
+      <div class="">
         <div class="">
-          <div class="">
-            <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
-          </div>
-          <div class="">
-            <button
-              class="btn btn-sm btn-danger"
-              data-id="{{blog.id}}"
-            >DELETE</button>
-          </div>
+          <h4><a href="/blog/{{blog.id}}">{{blog.title}}</a></h4>
         </div>
-      {{/each}}
-    </div>
-  {{/if}}
+        <div class="">
+          <button
+            class="btn btn-sm btn-danger"
+            data-id="{{blog.id}}"
+          >DELETE</button>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+
 </div>
 
 <script src="/js/dashboard.js"></script>

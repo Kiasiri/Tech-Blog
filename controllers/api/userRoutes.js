@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 router.post("/", async (req, res) => {
   try {
     const newUserData = req.body;
-    newUserData.password = await bcrypt.hash(req.body.password, 10);
+
     const newUser = await User.create(newUserData);
 
     req.session.save(() => {
@@ -29,6 +29,7 @@ router.post("/login", async (req, res) => {
       res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
+      console.log("username not found");
       return;
     }
 
@@ -39,6 +40,7 @@ router.post("/login", async (req, res) => {
       res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" });
+      console.log("password incorrect");
       return;
     }
 
