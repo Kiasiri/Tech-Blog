@@ -1,6 +1,9 @@
 # Tech-Blog
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+## image
+
+<img src="Dashboard.PNG" width="300">
 
 ## Description
 
