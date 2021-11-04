@@ -15,12 +15,12 @@ async function deleteBlogHandler(event) {
 
 async function createBlogHandler(event) {
   event.preventDefault();
-  const blogname = document.querySelector("#blog-name").value.trim();
+  const blogTitle = document.querySelector("#blog-title").value.trim();
   const blogText = document.querySelector("#blog-text").value.trim();
-  if (blogname && blogText) {
+  if (blogTitle && blogText) {
     const response = await fetch("/api/blogs", {
       method: "POST",
-      body: JSON.stringify({ blogname, blogText }),
+      body: JSON.stringify({ blogTitle, blogText }),
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
