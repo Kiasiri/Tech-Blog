@@ -14,31 +14,26 @@
     <div class="">
       <header class="">
         <h1>
-          <a href="/">list of BLOGS</a>
+          <a href="/homepage">Homepage</a>
         </h1>
         <nav>
 
-          {{#if logged_in}}
-            <a href="/dashboard">dashboard</a>
-            |
-            <button class="" id="logout">logout</button>
-          {{else}}
-            <a href="/login">login</a>
-          {{/if}}
+          <a href="/dashboard">Dashboard</a>
+          |
+          <a href="/login" class="" id="logout">Logout</a>
+
+          <a href="/login">Login</a>
+
         </nav>
       </header>
       <main class="container">
 
         {{{body}}}
       </main>
-      <footer>
 
-      </footer>
     </div>
 
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
+    <script src="/js/logout.js"></script>
 
   </body>
 </html>

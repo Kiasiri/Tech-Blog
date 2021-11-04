@@ -3,6 +3,7 @@ const { User, Blog } = require("../../models");
 const withAuth = require("../../utils/auth");
 
 router.post("/", withAuth, async (req, res) => {
+  console.log(req.body);
   try {
     const newBlogData = await Blog.create({
       ...req.body,

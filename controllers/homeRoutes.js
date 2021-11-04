@@ -21,7 +21,7 @@ router.get("/", withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-router.get("dashboard", withAuth, async (req, res) => {
+router.get("/dashboard", withAuth, async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
@@ -67,7 +67,7 @@ router.get("/homepage", async (req, res) => {
 router.get("/login", (req, res) => {
   // If a session exists, redirect the request to the homepage
   if (req.session.logged_in) {
-    res.redirect("/dashboard");
+    res.redirect("dashboard");
     return;
   }
 
